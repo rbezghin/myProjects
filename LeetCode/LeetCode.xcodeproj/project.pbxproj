@@ -64,9 +64,10 @@
 			isa = PBXGroup;
 			children = (
 				8029F25424CFB22900700E61 /* main.swift */,
+				8097098625840CBC0059F58E /* Hard */,
+				8097098525840CAB0059F58E /* Medium */,
 				8097098225840C240059F58E /* Easy */,
-				806A80712575A4A3004CA00A /* Stack.swift */,
-				806A80742575A4B7004CA00A /* Queue.swift */,
+				8097098725840CD30059F58E /* Utils */,
 			);
 			path = LeetCode;
 			sourceTree = "<group>";
@@ -77,6 +78,29 @@
 				8008B6C52580518400C67FE1 /* Fib.swift */,
 			);
 			path = Easy;
+			sourceTree = "<group>";
+		};
+		8097098525840CAB0059F58E /* Medium */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Medium;
+			sourceTree = "<group>";
+		};
+		8097098625840CBC0059F58E /* Hard */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Hard;
+			sourceTree = "<group>";
+		};
+		8097098725840CD30059F58E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				806A80712575A4A3004CA00A /* Stack.swift */,
+				806A80742575A4B7004CA00A /* Queue.swift */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
