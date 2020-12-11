@@ -8,6 +8,8 @@
 import Foundation
 
 class Fib{
+    // Time O(n)
+    // Space O(1)
     static func getNthFibIterative(n: Int) -> Int{
         if n <= 1{
             return 0
@@ -24,6 +26,8 @@ class Fib{
         }
         return current
     }
+    // Time O(n) with memoization, and it would be O(2^n) without it. for every element in n you get two more calls
+    // Space O(n) - for dict
     static func getNthFibRecursive(n: Int) -> Int{
         var dict = [Int: Int]()
         return getFib(&dict, n)
