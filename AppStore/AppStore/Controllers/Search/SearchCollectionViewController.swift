@@ -9,19 +9,19 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-class CollectionViewController: UICollectionViewController, UISearchBarDelegate {
+class SearchCollectionViewController: UICollectionViewController, UISearchBarDelegate {
     
     var results = [Result]()
     
-    let searchController = UISearchController(searchResultsController: nil)
-    
-    init(){
-        super.init(collectionViewLayout: UICollectionViewFlowLayout())
+    init() {
+        super.init(collectionViewLayout: UICollectionViewLayout())
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    let searchController = UISearchController(searchResultsController: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,7 +96,7 @@ class CollectionViewController: UICollectionViewController, UISearchBarDelegate 
 
 }
 // MARK: UICollectionViewDataSource & UICollectionViewDelegateFlowLayout
-extension CollectionViewController: UICollectionViewDelegateFlowLayout{
+extension SearchCollectionViewController: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         .init(width: view.frame.width, height: 350)
     }

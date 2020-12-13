@@ -13,8 +13,8 @@ class BaseTabBarController: UITabBarController {
         super.viewDidLoad()
         //create today, apps, search
         let today = createNavController(viewController: UIViewController(), title: "Today", imageName: "newspaper")
-        let apps = createNavController(viewController: UIViewController(), title: "Apps", imageName: "gamecontroller")
-        let search = createNavController(viewController: CollectionViewController(), title: "Search", imageName: "magnifyingglass")
+        let apps = createNavController(viewController: AppsCollectionViewController(), title: "Apps", imageName: "gamecontroller")
+        let search = createNavController(viewController: SearchCollectionViewController(), title: "Search", imageName: "magnifyingglass")
         
         viewControllers = [today, apps, search]
 
