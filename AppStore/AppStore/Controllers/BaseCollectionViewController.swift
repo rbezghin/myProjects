@@ -2,7 +2,7 @@
 //  BaseCollectionViewController.swift
 //  AppStore
 //
-//  Created by Radomyr Bezghin on 12/13/20.
+//  Created by Radomyr Bezghin on 12/15/20.
 //
 
 import UIKit
@@ -10,7 +10,8 @@ import UIKit
 class BaseCollectionViewController: UICollectionViewController {
     
     init() {
-        super.init(collectionViewLayout: UICollectionViewLayout())
+        let layout = UICollectionViewFlowLayout()
+        super.init(collectionViewLayout: layout)
     }
     
     required init?(coder: NSCoder) {

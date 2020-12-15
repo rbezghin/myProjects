@@ -12,7 +12,7 @@ class AppsCollectionViewController: UICollectionViewController {
     let cellID = "appsCell"
     
     init() {
-        super.init(collectionViewLayout: UICollectionViewLayout())
+        super.init(collectionViewLayout: UICollectionViewFlowLayout())
     }
     
     required init?(coder: NSCoder) {

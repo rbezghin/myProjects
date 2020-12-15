@@ -16,7 +16,7 @@ class BaseTabBarController: UITabBarController {
         let apps = createNavController(viewController: AppsCollectionViewController(), title: "Apps", imageName: "gamecontroller")
         let search = createNavController(viewController: SearchCollectionViewController(), title: "Search", imageName: "magnifyingglass")
         
-        viewControllers = [today, apps, search]
+        viewControllers = [apps, today, search]
 
     }
     
@@ -29,16 +29,4 @@ class BaseTabBarController: UITabBarController {
         viewController.view.backgroundColor = .white
         return navc
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

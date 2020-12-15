@@ -8,7 +8,7 @@
 import Foundation
 
 ///response from search query
-struct AppSearchResult: Decodable{
+class AppSearchResult: Decodable{
     
     let resultCount: Int
     
@@ -16,7 +16,7 @@ struct AppSearchResult: Decodable{
     
 }
 ///result that is used to display apps in the search queury
-struct Result: Decodable{
+class Result: Decodable{
     
     let trackName: String
     
