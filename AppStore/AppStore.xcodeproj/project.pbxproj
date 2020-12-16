@@ -10,6 +10,8 @@
 		62395271AED79D22EA78FA08 /* Pods_AppStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B01832E840A8614C651424 /* Pods_AppStore.framework */; };
 		75EFA3568E0555ACE9905F66 /* Pods_AppStore_AppStoreUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8088AA0AD5F60356084B9692 /* Pods_AppStore_AppStoreUITests.framework */; };
 		800BE6D42589713B0044C946 /* BaseCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800BE6D32589713B0044C946 /* BaseCollectionViewController.swift */; };
+		802429212589859A007A66F5 /* AppsGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802429202589859A007A66F5 /* AppsGroupCell.swift */; };
+		80242926258985F1007A66F5 /* AppsGroupCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80242925258985F1007A66F5 /* AppsGroupCollectionViewController.swift */; };
 		806A803925756FD3004CA00A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806A803825756FD3004CA00A /* AppDelegate.swift */; };
 		806A803B25756FD3004CA00A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806A803A25756FD3004CA00A /* SceneDelegate.swift */; };
 		806A804025756FD3004CA00A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 806A803E25756FD3004CA00A /* Main.storyboard */; };
@@ -51,6 +53,8 @@
 		1646BA034A7E3FA5845C6FCE /* Pods-AppStore-AppStoreUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStore-AppStoreUITests.debug.xcconfig"; path = "Target Support Files/Pods-AppStore-AppStoreUITests/Pods-AppStore-AppStoreUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		22B01832E840A8614C651424 /* Pods_AppStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		800BE6D32589713B0044C946 /* BaseCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewController.swift; sourceTree = "<group>"; };
+		802429202589859A007A66F5 /* AppsGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsGroupCell.swift; sourceTree = "<group>"; };
+		80242925258985F1007A66F5 /* AppsGroupCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsGroupCollectionViewController.swift; sourceTree = "<group>"; };
 		806A803525756FD3004CA00A /* AppStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		806A803825756FD3004CA00A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		806A803A25756FD3004CA00A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -224,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				809709942586A1C00059F58E /* AppsCollectionViewController.swift */,
+				80242925258985F1007A66F5 /* AppsGroupCollectionViewController.swift */,
 			);
 			path = Apps;
 			sourceTree = "<group>";
@@ -240,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				809709A02586B1AA0059F58E /* AppsCollectionViewCell.swift */,
+				802429202589859A007A66F5 /* AppsGroupCell.swift */,
 			);
 			path = Apps;
 			sourceTree = "<group>";
@@ -507,10 +513,12 @@
 			files = (
 				806A806C257570BC004CA00A /* BaseTabBarController.swift in Sources */,
 				809709A12586B1AA0059F58E /* AppsCollectionViewCell.swift in Sources */,
+				80242926258985F1007A66F5 /* AppsGroupCollectionViewController.swift in Sources */,
 				8097096C2581442F0059F58E /* Service.swift in Sources */,
 				800BE6D42589713B0044C946 /* BaseCollectionViewController.swift in Sources */,
 				806A80862576C7F5004CA00A /* VerticalStackView.swift in Sources */,
 				806A803925756FD3004CA00A /* AppDelegate.swift in Sources */,
+				802429212589859A007A66F5 /* AppsGroupCell.swift in Sources */,
 				806A803B25756FD3004CA00A /* SceneDelegate.swift in Sources */,
 				806A808B2576C860004CA00A /* SearchResultCollectionViewCell.swift in Sources */,
 				809709952586A1C00059F58E /* AppsCollectionViewController.swift in Sources */,

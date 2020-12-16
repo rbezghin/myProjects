@@ -20,20 +20,16 @@ class SearchCollectionViewController: BaseCollectionViewController, UISearchBarD
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.backgroundColor = .white
-        // Register cell classes
         self.collectionView!.register(SearchResultCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
         setupSearchBar()
     }
     
     private func setupSearchBar(){
         definesPresentationContext = true
         navigationItem.searchController = searchController
-        //navigationItem.hidesSearchBarWhenScrolling = false
+        navigationItem.hidesSearchBarWhenScrolling = false
         searchController.dimsBackgroundDuringPresentation = false
         searchController.searchBar.delegate = self
-        
     }
     
     var timer = Timer()
