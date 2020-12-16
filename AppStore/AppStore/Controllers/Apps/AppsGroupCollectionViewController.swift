@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AppsGroupCollectionViewCcontroller: BaseCollectionViewController {
+class AppsGroupCollectionViewCcontroller: BaseCollectionViewController, UICollectionViewDelegateFlowLayout {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,11 +16,7 @@ class AppsGroupCollectionViewCcontroller: BaseCollectionViewController {
             layout.scrollDirection = .horizontal
         }
     }
-}
-extension AppsGroupCollectionViewCcontroller: UICollectionViewDelegateFlowLayout{
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return .init(width: self.view.frame.width - 20, height: 45)
-    }
+    
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -31,5 +27,19 @@ extension AppsGroupCollectionViewCcontroller: UICollectionViewDelegateFlowLayout
         let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: AppsGroupCell().cellID, for: indexPath) as! AppsGroupCell
         cell.backgroundColor = .red
         return cell
+    }
+    
+    let minimumLineSpacing = CGFloat(10)
+    let topBottomInsets = CGFloat(10)
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let height = CGFloat(self.view.frame.height - 2*topBottomInsets - 2*minimumLineSpacing)/3
+        return .init(width: self.view.frame.width - 30, height: height)
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return .init(top: topBottomInsets, left: topBottomInsets, bottom: topBottomInsets, right: topBottomInsets)
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return minimumLineSpacing
     }
 }
