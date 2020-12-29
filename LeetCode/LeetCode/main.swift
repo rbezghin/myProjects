@@ -10,4 +10,4 @@ import Foundation
 
 
 //print(Fib.getNthFibIterative(n: 6))
-print(BinarySearch().binarySearch(array: [1,2,3], target: 1))
+print(FindThreeLargestNumbers().findThreeLargestNumbers(array: [10,5,9,10,12]))
