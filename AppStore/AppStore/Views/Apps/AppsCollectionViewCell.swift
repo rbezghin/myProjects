@@ -20,7 +20,6 @@ class AppsCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .blue
         
         self.addSubview(titleLabel)
         self.addSubview(horizontalController.view)
@@ -29,7 +28,7 @@ class AppsCollectionViewCell: UICollectionViewCell {
                           leading: self.leadingAnchor,
                           bottom: nil,
                           trailing: self.trailingAnchor,
-                          padding: .init(top: 10, left: 10, bottom: 0, right: 10))
+                          padding: .init(top: 10, left: 16, bottom: 0, right: 10))
         horizontalController.view.anchor(top: titleLabel.bottomAnchor,
                           leading: self.leadingAnchor,
                           bottom: self.bottomAnchor,

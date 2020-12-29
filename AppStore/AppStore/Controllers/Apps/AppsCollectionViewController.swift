@@ -7,17 +7,9 @@
 
 import UIKit
 
-class AppsCollectionViewController: UICollectionViewController {
+class AppsCollectionViewController: BaseCollectionViewController {
     
     let cellID = "appsCell"
-    
-    init() {
-        super.init(collectionViewLayout: UICollectionViewFlowLayout())
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +22,7 @@ class AppsCollectionViewController: UICollectionViewController {
 }
 extension AppsCollectionViewController: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return .init(width: self.view.frame.width, height: 250)
+        return .init(width: self.view.frame.width, height: 300)
     }
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -40,7 +32,7 @@ extension AppsCollectionViewController: UICollectionViewDelegateFlowLayout{
     }
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! AppsCollectionViewCell
-        cell.backgroundColor = .red
+        //cell.backgroundColor = .red
         return cell
     }
 }

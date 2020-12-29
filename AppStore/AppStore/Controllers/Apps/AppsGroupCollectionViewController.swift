@@ -11,6 +11,7 @@ class AppsGroupCollectionViewCcontroller: BaseCollectionViewController, UICollec
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.collectionView.backgroundColor = .white
         collectionView.register(AppsGroupCell.self, forCellWithReuseIdentifier: AppsGroupCell().cellID)
         if let layout = collectionViewLayout as? UICollectionViewFlowLayout {
             layout.scrollDirection = .horizontal
@@ -25,7 +26,7 @@ class AppsGroupCollectionViewCcontroller: BaseCollectionViewController, UICollec
     }
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: AppsGroupCell().cellID, for: indexPath) as! AppsGroupCell
-        cell.backgroundColor = .red
+        //cell.backgroundColor = .red
         return cell
     }
     
@@ -33,8 +34,8 @@ class AppsGroupCollectionViewCcontroller: BaseCollectionViewController, UICollec
     let topBottomInsets = CGFloat(10)
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let height = CGFloat(self.view.frame.height - 2*topBottomInsets - 2*minimumLineSpacing)/3
-        return .init(width: self.view.frame.width - 30, height: height)
+        let height = CGFloat(self.view.frame.height - (2 * topBottomInsets) - (2 * minimumLineSpacing))/3 - 1
+        return .init(width: self.view.frame.width - 48, height: height)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return .init(top: topBottomInsets, left: topBottomInsets, bottom: topBottomInsets, right: topBottomInsets)
