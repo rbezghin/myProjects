@@ -12,6 +12,7 @@
 		804C9DFD259BD3CB00ECC874 /* FindThreeLargestNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804C9DFC259BD3CB00ECC874 /* FindThreeLargestNumbers.swift */; };
 		804C9E01259BDAE000ECC874 /* BubbleSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804C9E00259BDAE000ECC874 /* BubbleSort.swift */; };
 		804C9E1C25A14D0C00ECC874 /* InsertionSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804C9E1B25A14D0C00ECC874 /* InsertionSort.swift */; };
+		80699CB925A91FDD0037FF0F /* SmallestDifference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80699CB825A91FDD0037FF0F /* SmallestDifference.swift */; };
 		806A80722575A4A3004CA00A /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806A80712575A4A3004CA00A /* Stack.swift */; };
 		806A80752575A4B7004CA00A /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806A80742575A4B7004CA00A /* Queue.swift */; };
 		8097098925840EA80059F58E /* ProductSum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8097098825840EA80059F58E /* ProductSum.swift */; };
@@ -20,6 +21,7 @@
 		80E6A1E025A52B4D00E62C66 /* PalindromeCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E6A1DF25A52B4D00E62C66 /* PalindromeCheck.swift */; };
 		80E6A1E325A532A900E62C66 /* CaesarCipherEncryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E6A1E225A532A900E62C66 /* CaesarCipherEncryptor.swift */; };
 		80E6A1E625A5386C00E62C66 /* RunLengthEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E6A1E525A5386C00E62C66 /* RunLengthEncoding.swift */; };
+		80E6A1E925A675FE00E62C66 /* ThreeNumberSum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E6A1E825A675FE00E62C66 /* ThreeNumberSum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -41,6 +43,7 @@
 		804C9DFC259BD3CB00ECC874 /* FindThreeLargestNumbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindThreeLargestNumbers.swift; sourceTree = "<group>"; };
 		804C9E00259BDAE000ECC874 /* BubbleSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleSort.swift; sourceTree = "<group>"; };
 		804C9E1B25A14D0C00ECC874 /* InsertionSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertionSort.swift; sourceTree = "<group>"; };
+		80699CB825A91FDD0037FF0F /* SmallestDifference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallestDifference.swift; sourceTree = "<group>"; };
 		806A80712575A4A3004CA00A /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		806A80742575A4B7004CA00A /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 		8097098825840EA80059F58E /* ProductSum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSum.swift; sourceTree = "<group>"; };
@@ -49,6 +52,7 @@
 		80E6A1DF25A52B4D00E62C66 /* PalindromeCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalindromeCheck.swift; sourceTree = "<group>"; };
 		80E6A1E225A532A900E62C66 /* CaesarCipherEncryptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaesarCipherEncryptor.swift; sourceTree = "<group>"; };
 		80E6A1E525A5386C00E62C66 /* RunLengthEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunLengthEncoding.swift; sourceTree = "<group>"; };
+		80E6A1E825A675FE00E62C66 /* ThreeNumberSum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeNumberSum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,8 @@
 		8097098525840CAB0059F58E /* Medium */ = {
 			isa = PBXGroup;
 			children = (
+				80E6A1E825A675FE00E62C66 /* ThreeNumberSum.swift */,
+				80699CB825A91FDD0037FF0F /* SmallestDifference.swift */,
 			);
 			name = Medium;
 			sourceTree = "<group>";
@@ -193,9 +199,11 @@
 				80E6A1E325A532A900E62C66 /* CaesarCipherEncryptor.swift in Sources */,
 				8097098925840EA80059F58E /* ProductSum.swift in Sources */,
 				804C9DFD259BD3CB00ECC874 /* FindThreeLargestNumbers.swift in Sources */,
+				80E6A1E925A675FE00E62C66 /* ThreeNumberSum.swift in Sources */,
 				80E6A1DD25A5272900E62C66 /* SelectionSort.swift in Sources */,
 				8097098D258425970059F58E /* BinarySearch.swift in Sources */,
 				80E6A1E625A5386C00E62C66 /* RunLengthEncoding.swift in Sources */,
+				80699CB925A91FDD0037FF0F /* SmallestDifference.swift in Sources */,
 				806A80752575A4B7004CA00A /* Queue.swift in Sources */,
 				8029F25524CFB22900700E61 /* main.swift in Sources */,
 				80E6A1E025A52B4D00E62C66 /* PalindromeCheck.swift in Sources */,
