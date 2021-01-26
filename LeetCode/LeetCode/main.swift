@@ -12,7 +12,10 @@ import Foundation
 //print(Fib.getNthFibIterative(n: 6))
 //print(FindThreeLargestNumbers().findThreeLargestNumbers(array: [10,5,9,10,12]))
 
-var array = [2, 1, 2, 2, 2, 3, 4, 2]
-var array2 = [-1441, -124, -25, 1014, 1500, 660, 410, 245, 530]
-print(MoveElementToEnd().moveElementToEnd(&array, 2))
+
+let array = [1, 2, 3, 3, 4, 0, 10, 6, 5, -1, -3, 2, 3]
+let array1 = [3, 3, 4, 0, 10, 6, 5, -1, -3, 2, 3]
+let array2 = [1, 2, 3, 3, 3]
+
+print(ArrayOfProducts().arrayOfProducts([5, 1, 4, 2]))
 

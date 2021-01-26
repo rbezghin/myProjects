@@ -10,7 +10,7 @@ import Foundation
 class CaesarCipherEncryptor {
   func caesarCipherEncryptor(string: String, key: UInt32) -> String {
     var newString = String()
-    for (index, character) in string.enumerated(){
+    for (_, character) in string.enumerated(){
         var value: UInt32 = UInt32(character.asciiValue ?? 0) + (key % 26)
         if value > 122 {
             value = value - 97
