@@ -16,6 +16,9 @@
 		805614DE25BF84AD008E9E54 /* SpiralTraverse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805614DD25BF84AD008E9E54 /* SpiralTraverse.swift */; };
 		805614E125C09C6F008E9E54 /* LongestPeak.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805614E025C09C6F008E9E54 /* LongestPeak.swift */; };
 		805614E425C0C228008E9E54 /* ArrayOfProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805614E325C0C228008E9E54 /* ArrayOfProducts.swift */; };
+		8056151E25C3571F008E9E54 /* FirstDuplicateValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8056151D25C3571F008E9E54 /* FirstDuplicateValue.swift */; };
+		8056152125C3721B008E9E54 /* BST.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8056152025C3721B008E9E54 /* BST.swift */; };
+		806261AA25ED86DA0047793E /* BSTIterative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806261A925ED86DA0047793E /* BSTIterative.swift */; };
 		80699CB925A91FDD0037FF0F /* SmallestDifference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80699CB825A91FDD0037FF0F /* SmallestDifference.swift */; };
 		80699CBF25AE7E400037FF0F /* MoveElementToEnd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80699CBE25AE7E400037FF0F /* MoveElementToEnd.swift */; };
 		806A80722575A4A3004CA00A /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806A80712575A4A3004CA00A /* Stack.swift */; };
@@ -52,6 +55,9 @@
 		805614DD25BF84AD008E9E54 /* SpiralTraverse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpiralTraverse.swift; sourceTree = "<group>"; };
 		805614E025C09C6F008E9E54 /* LongestPeak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongestPeak.swift; sourceTree = "<group>"; };
 		805614E325C0C228008E9E54 /* ArrayOfProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayOfProducts.swift; sourceTree = "<group>"; };
+		8056151D25C3571F008E9E54 /* FirstDuplicateValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstDuplicateValue.swift; sourceTree = "<group>"; };
+		8056152025C3721B008E9E54 /* BST.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BST.swift; sourceTree = "<group>"; };
+		806261A925ED86DA0047793E /* BSTIterative.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSTIterative.swift; sourceTree = "<group>"; };
 		80699CB825A91FDD0037FF0F /* SmallestDifference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallestDifference.swift; sourceTree = "<group>"; };
 		80699CBE25AE7E400037FF0F /* MoveElementToEnd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveElementToEnd.swift; sourceTree = "<group>"; };
 		806A80712575A4A3004CA00A /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
@@ -129,6 +135,9 @@
 				805614DD25BF84AD008E9E54 /* SpiralTraverse.swift */,
 				805614E025C09C6F008E9E54 /* LongestPeak.swift */,
 				805614E325C0C228008E9E54 /* ArrayOfProducts.swift */,
+				8056151D25C3571F008E9E54 /* FirstDuplicateValue.swift */,
+				8056152025C3721B008E9E54 /* BST.swift */,
+				806261A925ED86DA0047793E /* BSTIterative.swift */,
 				80699CB825A91FDD0037FF0F /* SmallestDifference.swift */,
 				80699CBE25AE7E400037FF0F /* MoveElementToEnd.swift */,
 			);
@@ -210,13 +219,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				805614E425C0C228008E9E54 /* ArrayOfProducts.swift in Sources */,
+				8056151E25C3571F008E9E54 /* FirstDuplicateValue.swift in Sources */,
 				804C9E1C25A14D0C00ECC874 /* InsertionSort.swift in Sources */,
 				806A80722575A4A3004CA00A /* Stack.swift in Sources */,
 				80E6A1E325A532A900E62C66 /* CaesarCipherEncryptor.swift in Sources */,
 				8097098925840EA80059F58E /* ProductSum.swift in Sources */,
 				805614E125C09C6F008E9E54 /* LongestPeak.swift in Sources */,
 				804C9DFD259BD3CB00ECC874 /* FindThreeLargestNumbers.swift in Sources */,
+				806261AA25ED86DA0047793E /* BSTIterative.swift in Sources */,
 				80E6A1E925A675FE00E62C66 /* ThreeNumberSum.swift in Sources */,
+				8056152125C3721B008E9E54 /* BST.swift in Sources */,
 				80E6A1DD25A5272900E62C66 /* SelectionSort.swift in Sources */,
 				8097098D258425970059F58E /* BinarySearch.swift in Sources */,
 				805614DE25BF84AD008E9E54 /* SpiralTraverse.swift in Sources */,
