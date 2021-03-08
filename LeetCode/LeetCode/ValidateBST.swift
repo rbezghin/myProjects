@@ -66,6 +66,10 @@ class ValidateBST {
         let max = Int.max
         return validateHelper(tree: tree, min: min, max: max)
     }
+    /*
+     Time: O(n) - check every element
+     Space: O(d) -  d height of the tree
+     */
     func validateHelper(tree: BST, min: Int, max: Int) -> Bool {
         if tree.value! < min || tree.value! >= max {
             return false

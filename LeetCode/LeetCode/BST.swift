@@ -8,7 +8,6 @@
 
 import Foundation
 
-class BST {
     class BST: Equatable {
         static func == (lhs: BST, rhs: BST) -> Bool {
             return lhs.value == rhs.value
@@ -139,4 +138,3 @@ class BST {
             }
         }
     }
-}

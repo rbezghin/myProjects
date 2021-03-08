@@ -26,6 +26,7 @@
 		806A80752575A4B7004CA00A /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806A80742575A4B7004CA00A /* Queue.swift */; };
 		8097098925840EA80059F58E /* ProductSum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8097098825840EA80059F58E /* ProductSum.swift */; };
 		8097098D258425970059F58E /* BinarySearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8097098C258425970059F58E /* BinarySearch.swift */; };
+		80ABEB7225F6DE4300EFB405 /* BSTTraversal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ABEB7125F6DE4300EFB405 /* BSTTraversal.swift */; };
 		80E6A1DD25A5272900E62C66 /* SelectionSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E6A1DC25A5272900E62C66 /* SelectionSort.swift */; };
 		80E6A1E025A52B4D00E62C66 /* PalindromeCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E6A1DF25A52B4D00E62C66 /* PalindromeCheck.swift */; };
 		80E6A1E325A532A900E62C66 /* CaesarCipherEncryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E6A1E225A532A900E62C66 /* CaesarCipherEncryptor.swift */; };
@@ -66,6 +67,7 @@
 		806A80742575A4B7004CA00A /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 		8097098825840EA80059F58E /* ProductSum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSum.swift; sourceTree = "<group>"; };
 		8097098C258425970059F58E /* BinarySearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinarySearch.swift; sourceTree = "<group>"; };
+		80ABEB7125F6DE4300EFB405 /* BSTTraversal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSTTraversal.swift; sourceTree = "<group>"; };
 		80E6A1DC25A5272900E62C66 /* SelectionSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionSort.swift; sourceTree = "<group>"; };
 		80E6A1DF25A52B4D00E62C66 /* PalindromeCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalindromeCheck.swift; sourceTree = "<group>"; };
 		80E6A1E225A532A900E62C66 /* CaesarCipherEncryptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaesarCipherEncryptor.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				8056152025C3721B008E9E54 /* BST.swift */,
 				806261A925ED86DA0047793E /* BSTIterative.swift */,
 				806261AF25EEE0D70047793E /* ValidateBST.swift */,
+				80ABEB7125F6DE4300EFB405 /* BSTTraversal.swift */,
 				80699CB825A91FDD0037FF0F /* SmallestDifference.swift */,
 				80699CBE25AE7E400037FF0F /* MoveElementToEnd.swift */,
 			);
@@ -228,6 +231,7 @@
 				80E6A1E325A532A900E62C66 /* CaesarCipherEncryptor.swift in Sources */,
 				8097098925840EA80059F58E /* ProductSum.swift in Sources */,
 				805614E125C09C6F008E9E54 /* LongestPeak.swift in Sources */,
+				80ABEB7225F6DE4300EFB405 /* BSTTraversal.swift in Sources */,
 				804C9DFD259BD3CB00ECC874 /* FindThreeLargestNumbers.swift in Sources */,
 				806261AA25ED86DA0047793E /* BSTIterative.swift in Sources */,
 				80E6A1E925A675FE00E62C66 /* ThreeNumberSum.swift in Sources */,
