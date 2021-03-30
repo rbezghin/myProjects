@@ -73,7 +73,7 @@
 				805B1ED5261265AB008ABBB8 /* Model */,
 				805B1EDC26126617008ABBB8 /* View */,
 				805B1ED226126591008ABBB8 /* Controller */,
-				805B1ED32612659B008ABBB8 /* Extensions */,
+				805B1ED32612659B008ABBB8 /* Util */,
 				805B1ED6261265B7008ABBB8 /* Etc */,
 				805B1EBD261169A8008ABBB8 /* Assets.xcassets */,
 				805B1EC2261169A8008ABBB8 /* Info.plist */,
@@ -89,13 +89,13 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		805B1ED32612659B008ABBB8 /* Extensions */ = {
+		805B1ED32612659B008ABBB8 /* Util */ = {
 			isa = PBXGroup;
 			children = (
 				805B1ECF26126577008ABBB8 /* Extensions.swift */,
 				80EA93A22613CA5100E3BC83 /* Constants.swift */,
 			);
-			path = Extensions;
+			path = Util;
 			sourceTree = "<group>";
 		};
 		805B1ED5261265AB008ABBB8 /* Model */ = {
