@@ -9,17 +9,20 @@ import UIKit
 ///
 /// Represents a "Button" that is used in the "SimonSays" game
 ///
-enum ButtonType{
+enum ButtonColorType{
     case red
     case green
     case blue
     case yellow
 }
-struct ButtonItem{
+struct ButtonItem: Equatable{
+    static func == (lhs: ButtonItem, rhs: ButtonItem) -> Bool {
+        return lhs.buttonType == rhs.buttonType
+    }
     
-    var buttonType: ButtonType
+    var buttonType: ButtonColorType
     
-    init(_ buttonType: ButtonType) {
+    init(_ buttonType: ButtonColorType) {
         self.buttonType = buttonType
     }
 }

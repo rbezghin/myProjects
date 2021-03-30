@@ -9,11 +9,14 @@ import UIKit
 
 class SimonButton: UIButton {
     
+    let buttonColorType: ButtonColorType
+    
     let mainColor: UIColor
     
     let secondaryColor: UIColor
     
-    required init(_ mainColor: UIColor, _ secondaryColor: UIColor) {
+    required init(_ mainColor: UIColor, _ secondaryColor: UIColor, _ type: ButtonColorType) {
+        self.buttonColorType = type
         self.mainColor = mainColor
         self.secondaryColor = secondaryColor
         super.init(frame: .zero)

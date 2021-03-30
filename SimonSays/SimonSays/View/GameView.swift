@@ -59,19 +59,19 @@ class GameView: UIView {
         return stack
     }()
     let redButton: SimonButton = {
-        let button = SimonButton(.red, .orange)
+        let button = SimonButton(.red, .orange, .red)
         return button
     }()
     let blueButton: SimonButton = {
-        let button = SimonButton(.blue, .orange)
+        let button = SimonButton(.blue, .orange, .blue)
         return button
     }()
     let greenButton: UIButton = {
-        let button = SimonButton(.green, .orange)
+        let button = SimonButton(.green, .orange, .green)
         return button
     }()
     let yellowButton: UIButton = {
-        let button = SimonButton(.yellow, .orange)
+        let button = SimonButton(.yellow, .orange, .yellow)
         return button
     }()
 
@@ -156,7 +156,7 @@ extension GameView{
     @objc func didTapNewGameButton(){
         inGameUI()
     }
-    func highlightButton(_ buttonType: ButtonType){
+    func highlightButton(_ buttonType: ButtonColorType){
         switch buttonType {
         case .red:
             redButton.isHighlighted.toggle()

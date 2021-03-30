@@ -11,12 +11,18 @@ class ViewController: UIViewController {
     
     let gameView = GameView()
     
-    let game = SimonSays()
+    let game = SimonSaysGame()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setupGameView()
+        game.gameOverHandler = { [weak self] score in
+            print("game over")
+        }
+        game.newLevelHandler = { [weak self] in
+            self?.initiateNewLevel()
+        }
     }
     override func viewDidAppear(_ animated: Bool) {
     }
@@ -28,6 +34,11 @@ class ViewController: UIViewController {
                             trailing: self.view.trailingAnchor)
         
         gameView.newGameButton.addTarget(self, action: #selector(didTapNewGameButton), for: .touchUpInside)
+        
+        gameView.redButton.addTarget(self, action: #selector(didTapSimonButton( _:)), for: .touchUpInside)
+        gameView.blueButton.addTarget(self, action: #selector(didTapSimonButton( _:)), for: .touchUpInside)
+        gameView.greenButton.addTarget(self, action: #selector(didTapSimonButton( _:)), for: .touchUpInside)
+        gameView.yellowButton.addTarget(self, action: #selector(didTapSimonButton( _:)), for: .touchUpInside)
     }
     private func showButtonsSequence(_ buttonsSequence: [ButtonItem]){
         for button in buttonsSequence {
@@ -43,9 +54,26 @@ class ViewController: UIViewController {
         }
     }
     @objc private func didTapNewGameButton(){
-        //game.start()
+        game.startGame()
+        initiateNewLevel()
+    }
+    private func initiateNewLevel(){
         DispatchQueue.global(qos: .userInteractive).async {
-            self.showButtonsSequence([ButtonItem(.red), ButtonItem(.green), ButtonItem(.blue), ButtonItem(.yellow)])
+            print(self.game.currentSequence)
+            self.showButtonsSequence(self.game.currentSequence)
+        }
+    }
+    @objc private func didTapSimonButton(_ sender: AnyObject){
+        guard let button = sender as? SimonButton else {return}
+        switch button.buttonColorType {
+        case .red:
+            game.chooseButton(withColorType: .red)
+        case .blue:
+            game.chooseButton(withColorType: .blue)
+        case .green:
+            game.chooseButton(withColorType: .green)
+        case .yellow:
+            game.chooseButton(withColorType: .yellow)
         }
     }
 
