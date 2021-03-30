@@ -9,9 +9,26 @@ import Foundation
 
 struct Score {
     
-    var currentScore: Int
+    private(set) var currentScore: Int {
+        didSet{
+            if maxScore < currentScore{
+                maxScore = currentScore
+            }
+        }
+    }
     
-    var currentLevel: Int
+    private(set) var currentLevel: Int
     
-    var maxScore: Int
+    private(set) var maxScore: Int
+    
+    mutating func resetScore() {
+        currentScore = 0
+        currentLevel = 1
+    }
+    mutating func nextLevel(){
+        currentLevel += 1
+    }
+    mutating func addScore(){
+        currentScore += currentLevel * 2
+    }
 }

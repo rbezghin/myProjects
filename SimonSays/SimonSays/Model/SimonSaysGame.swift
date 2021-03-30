@@ -39,9 +39,9 @@ extension SimonSaysGame{
         if userSequence.count > currentSequence.count || currentSequence[currentIndex] != userSequence[currentIndex]{
             gameOver()
         } else if userSequence.count < currentSequence.count  {
-            score.currentScore += score.currentLevel * 2
+            score.addScore()
         } else {
-            score.currentScore += score.currentLevel * 2
+            score.addScore()
             nextLevel()
         }
     }
@@ -50,21 +50,17 @@ extension SimonSaysGame{
 extension SimonSaysGame {
     private func nextLevel(){
         userSequence = []
-        score.currentLevel += 1
+        score.nextLevel()
         currentSequence.append(pickNewRandomButtonItem())
         newLevelHandler?()
     }
     private func gameOver(){
-        if score.currentScore > score.maxScore {
-            score.maxScore = score.currentScore
-        }
         gameOverHandler?(score)
     }
     private func resetData(){
         userSequence = []
         currentSequence = []
-        score.currentScore = 0
-        score.currentLevel = 1
+        score.resetScore()
     }
     private func pickNewRandomButtonItem()->ButtonItem{
         return [ButtonItem(.red),ButtonItem(.blue),ButtonItem(.green),ButtonItem(.yellow)].randomElement()!
