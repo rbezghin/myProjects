@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		805B1EB5261169A4008ABBB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805B1EB4261169A4008ABBB8 /* AppDelegate.swift */; };
 		805B1EB7261169A4008ABBB8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805B1EB6261169A4008ABBB8 /* SceneDelegate.swift */; };
-		805B1EB9261169A4008ABBB8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805B1EB8261169A4008ABBB8 /* ViewController.swift */; };
+		805B1EB9261169A4008ABBB8 /* SimonSaysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805B1EB8261169A4008ABBB8 /* SimonSaysViewController.swift */; };
 		805B1EBC261169A4008ABBB8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 805B1EBA261169A4008ABBB8 /* Main.storyboard */; };
 		805B1EBE261169A8008ABBB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 805B1EBD261169A8008ABBB8 /* Assets.xcassets */; };
 		805B1EC1261169A8008ABBB8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 805B1EBF261169A8008ABBB8 /* LaunchScreen.storyboard */; };
@@ -25,7 +25,7 @@
 		805B1EB1261169A4008ABBB8 /* SimonSays.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimonSays.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		805B1EB4261169A4008ABBB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		805B1EB6261169A4008ABBB8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		805B1EB8261169A4008ABBB8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		805B1EB8261169A4008ABBB8 /* SimonSaysViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimonSaysViewController.swift; sourceTree = "<group>"; };
 		805B1EBB261169A4008ABBB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		805B1EBD261169A8008ABBB8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		805B1EC0261169A8008ABBB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -82,7 +82,7 @@
 		805B1ED226126591008ABBB8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				805B1EB8261169A4008ABBB8 /* ViewController.swift */,
+				805B1EB8261169A4008ABBB8 /* SimonSaysViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -198,7 +198,7 @@
 				805B1ECD26126364008ABBB8 /* ButtonItem.swift in Sources */,
 				805B1ED026126577008ABBB8 /* Extensions.swift in Sources */,
 				805B1ECA26126356008ABBB8 /* SimonSaysGame.swift in Sources */,
-				805B1EB9261169A4008ABBB8 /* ViewController.swift in Sources */,
+				805B1EB9261169A4008ABBB8 /* SimonSaysViewController.swift in Sources */,
 				805B1EB5261169A4008ABBB8 /* AppDelegate.swift in Sources */,
 				805B1EB7261169A4008ABBB8 /* SceneDelegate.swift in Sources */,
 				805B1EDF26128EC3008ABBB8 /* SimonButton.swift in Sources */,

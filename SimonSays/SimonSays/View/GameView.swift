@@ -54,6 +54,7 @@ class GameView: UIView {
         stack.axis = .vertical
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.distribution = .fillEqually
+        stack.isUserInteractionEnabled = false
         stack.spacing = 10
         return stack
     }()
@@ -128,6 +129,8 @@ extension GameView {
 extension GameView{
     ///when new game button was tapped, hide new game button and high score label
     func inGameUI(){
+        stack.isUserInteractionEnabled = true
+        
         highScoreLabel.isHidden = true
         newGameButton.isHidden = true
         
@@ -136,11 +139,14 @@ extension GameView{
     }
     ///before new game button was tapped show new game button and high score if it exists
     func newGameUI(){
+        stack.isUserInteractionEnabled = false
+        
         levelLabel.isHidden = true
         scoreLabel.isHidden = true
         
         highScoreLabel.isHidden = false
         newGameButton.isHidden = false
+        
     }
     @objc func didTapNewGameButton(){
         inGameUI()

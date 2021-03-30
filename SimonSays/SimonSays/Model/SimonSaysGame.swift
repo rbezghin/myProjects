@@ -6,9 +6,17 @@
 //
 
 import Foundation
-
+///
+/// Models a "SimonSays" game
+/// In SimonSays you need to remember the sequence in which 4 colored buttons are highlighted
+/// Game starts with 1 button and with every successful try it adds +1 button.
+/// SimonSaysGame is build with Score mode and ButtonItem model
+/// Score is calculated depending on what level it is and ButtonItem stores type of the button highlighted
+/// Whenever a change in game status occurs that change is notified via closures gameOverHandler & newLevelHandler
+///
 class SimonSaysGame{
-    private(set) var gameIsRunning = false
+    ///used to determined whether game is still running or is in undefined state
+    private(set) var isGameRunning = false
     ///data related to score/maxscore/level
     private(set) var score: Score
     ///randomly generated sequence
@@ -30,7 +38,7 @@ class SimonSaysGame{
 extension SimonSaysGame{
     ///after user taps start new game startGame func is called
     func startGame(){
-        gameIsRunning = true
+        isGameRunning = true
         resetData()
         currentSequence.append(pickNewRandomButtonItem())
     }
@@ -57,7 +65,7 @@ extension SimonSaysGame {
         newLevelHandler?()
     }
     private func gameOver(){
-        gameIsRunning = false
+        isGameRunning = false
         gameOverHandler?(score)
     }
     private func resetData(){

@@ -6,8 +6,10 @@
 //
 
 import UIKit
-
-class ViewController: UIViewController {
+///
+/// View-controller of the Simon Says game
+///
+class SimonSaysViewController: UIViewController {
     
     private let gameView = GameView()
     
@@ -21,7 +23,7 @@ class ViewController: UIViewController {
     }
 }
 //MARK: -- Game setup
-extension ViewController{
+extension SimonSaysViewController{
     private func setupGameHandlers(){
         game.gameOverHandler = { [weak self] score in
             self?.displayAlertWithScore()
@@ -47,7 +49,7 @@ extension ViewController{
     }
 }
 //MARK: -- Game functionality
-extension ViewController {
+extension SimonSaysViewController {
     @objc private func didTapSimonButton(_ sender: AnyObject){
         guard let button = sender as? SimonButton else {return}
         game.chooseButton(withColorType: button.buttonColorType)
@@ -64,10 +66,10 @@ extension ViewController {
             self.showButtonsSequence(self.game.currentSequence)
         }
     }
-    ///shows sequence of buttons with pauses inbetween
+    ///shows sequence of buttons with pauses in between
     private func showButtonsSequence(_ buttonsSequence: [ButtonItem]){
         for button in buttonsSequence {
-            if !game.gameIsRunning{return}
+            if !game.isGameRunning{return}
             //changes color
             DispatchQueue.main.async {
                 self.gameView.highlightButton(button.buttonType)
@@ -80,6 +82,10 @@ extension ViewController {
         }
     }
     private func displayAlertWithScore(){
+        let generator = UINotificationFeedbackGenerator()
+        generator.prepare()
+        generator.notificationOccurred(.error)
+
         let alert = UIAlertController(title: "Game Over!",
                                       message: "Your current score is: \(game.score.currentScore)",
                                       preferredStyle: .alert)

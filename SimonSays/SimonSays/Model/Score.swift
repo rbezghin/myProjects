@@ -6,7 +6,9 @@
 //
 
 import Foundation
-
+///
+/// Score object stores all the data related to the scoles and levels.
+///
 struct Score {
     
     private(set) var currentScore: Int {

@@ -6,8 +6,10 @@
 //
 
 import UIKit
+///
 ///Custom UIButton that supports changing background color when its highlighted vs not highlighted
 ///also it has button type to differenciate between different buttons red vs blue etc..
+///
 class SimonButton: UIButton {
     
     let buttonColorType: ButtonColorType
