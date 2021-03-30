@@ -21,7 +21,6 @@ class GameView: UIView {
         stack.heightAnchor.constraint(equalToConstant: self.frame.width * 0.7).isActive = true
         stack.widthAnchor.constraint(equalToConstant: self.frame.width * 0.7).isActive = true
     }
-    
     let newGameButton: UIButton = {
         let button = UIButton()
         button.setTitle("New game", for: .normal)
@@ -31,7 +30,7 @@ class GameView: UIView {
     }()
     let highScoreLabel: UILabel = {
         let label = UILabel()
-        label.text = "High score: 123"
+        label.text = "High score: 0"
         label.textAlignment = .center
         label.isHidden = true
         return label
@@ -45,7 +44,7 @@ class GameView: UIView {
     }()
     let levelLabel: UILabel = {
         let label = UILabel()
-        label.text = "Level: 1"
+        label.text = "Level: 0"
         label.textAlignment = .center
         label.isHidden = true
         return label
@@ -123,20 +122,10 @@ extension GameView {
                                  trailing: stack.trailingAnchor,
                                  padding: .init(top: 10, left: 0, bottom: 0, right: 0),
                                  size: .init(width: 0, height: 60))
-        
     }
 }
 //MARK: -- helper functions
 extension GameView{
-    func setNewHighScore(_ score: Int){
-        highScoreLabel.text = "High score: \(score)"
-    }
-    func setScore(_ score: Int){
-        scoreLabel.text = "Score: \(score)"
-    }
-    func setLevel(_ level: Int){
-        levelLabel.text = "Level: \(level)"
-    }
     ///when new game button was tapped, hide new game button and high score label
     func inGameUI(){
         highScoreLabel.isHidden = true
@@ -168,32 +157,9 @@ extension GameView{
             yellowButton.isHighlighted.toggle()
         }
     }
-    func updateScore(_ score: Int, _ level: Int){
-        scoreLabel.text = "Score: \(score)"
-        levelLabel.text = "Level: \(level)"
+    func updateUIWith(score: Score){
+        scoreLabel.text = "Score: \(score.currentScore)"
+        levelLabel.text = "Level: \(score.currentLevel)"
+        highScoreLabel.text = "High score: \(score.maxScore)"
     }
-
 }
-
-
-//extension UIButton {
-//
-//  /// Sets the background color to use for the specified button state.
-//    func setBackgroundColor(color: UIColor, forState: UIControl.State) {
-//
-//        let minimumSize: CGSize = CGSize(width: 1.0, height: 1.0)
-//
-//        UIGraphicsBeginImageContext(minimumSize)
-//
-//        if let context = UIGraphicsGetCurrentContext() {
-//          context.setFillColor(color.cgColor)
-//          context.fill(CGRect(origin: .zero, size: minimumSize))
-//        }
-//
-//        let colorImage = UIGraphicsGetImageFromCurrentImageContext()
-//        UIGraphicsEndImageContext()
-//
-//        self.clipsToBounds = true
-//        self.setBackgroundImage(colorImage, for: forState)
-//    }
-//}

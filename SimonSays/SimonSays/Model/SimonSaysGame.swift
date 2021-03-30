@@ -7,61 +7,47 @@
 
 import Foundation
 
-struct Score {
-    
-    var currentScore: Int
-    
-    var currentLevel: Int
-    
-    var maxScore: Int
-}
-
 class SimonSaysGame{
-    
+    ///data related to score/maxscore/level
     private(set) var score: Score
-    
+    ///randomly generated sequence
     private(set) var currentSequence: [ButtonItem]
-    
+    ///used entered sequence
     private var userSequence: [ButtonItem]
-    
+    ///when game is over controller must be notified to make updates
     var gameOverHandler: ((_ score: Score)->Void)?
-    
+    ///when user entered correct sequence new level notification is sent to the vc
     var newLevelHandler: (()->Void)?
     
     init() {
-        score = Score(currentScore: 0, currentLevel: 0, maxScore: 0)
+        score = Score(currentScore: 0, currentLevel: 1, maxScore: 0)
         currentSequence = []
         userSequence = []
     }
+}
+//MARK: -- game management
+extension SimonSaysGame{
     ///after user taps start new game startGame func is called
     func startGame(){
         resetData()
         currentSequence.append(pickNewRandomButtonItem())
     }
-    func chooseButton(withColorType colorType: ButtonColorType) -> Bool{
+    ///when user taps a button it is matched with randomly generated sequence
+    func chooseButton(withColorType colorType: ButtonColorType){
         userSequence.append(ButtonItem(colorType))
         let currentIndex = userSequence.count-1
-        if userSequence.count > currentSequence.count{ print("more selected");
-            gameOver();
-            return false
-        } else if currentSequence[currentIndex] != userSequence[currentIndex] {
-            print("wrong selected")
+        if userSequence.count > currentSequence.count || currentSequence[currentIndex] != userSequence[currentIndex]{
             gameOver()
-            return false
         } else if userSequence.count < currentSequence.count  {
             score.currentScore += score.currentLevel * 2
         } else {
             score.currentScore += score.currentLevel * 2
             nextLevel()
         }
-        return true
     }
-    
-    
-    
-    private func pickNewRandomButtonItem()->ButtonItem{
-        return [ButtonItem(.red),ButtonItem(.blue),ButtonItem(.green),ButtonItem(.yellow)].randomElement()!
-    }
+}
+//MARK: -- game helper functions
+extension SimonSaysGame {
     private func nextLevel(){
         userSequence = []
         score.currentLevel += 1
@@ -69,15 +55,19 @@ class SimonSaysGame{
         newLevelHandler?()
     }
     private func gameOver(){
+        if score.currentScore > score.maxScore {
+            score.maxScore = score.currentScore
+        }
         gameOverHandler?(score)
     }
     private func resetData(){
         userSequence = []
         currentSequence = []
         score.currentScore = 0
-        score.currentLevel = 0
+        score.currentLevel = 1
     }
-    
-    
+    private func pickNewRandomButtonItem()->ButtonItem{
+        return [ButtonItem(.red),ButtonItem(.blue),ButtonItem(.green),ButtonItem(.yellow)].randomElement()!
+    }
 }
 

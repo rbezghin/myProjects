@@ -12,19 +12,24 @@ class ViewController: UIViewController {
     let gameView = GameView()
     
     let game = SimonSaysGame()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setupGameView()
+        setupGameHandlers()
+    }
+}
+//MARK: -- Game setup
+extension ViewController{
+    private func setupGameHandlers(){
         game.gameOverHandler = { [weak self] score in
             self?.displayAlertWithScore()
+            self?.updateUIWithModel()
         }
         game.newLevelHandler = { [weak self] in
             self?.initiateNewLevel()
         }
-    }
-    override func viewDidAppear(_ animated: Bool) {
     }
     private func setupGameView(){
         self.view.addSubview(gameView)
@@ -40,9 +45,29 @@ class ViewController: UIViewController {
         gameView.greenButton.addTarget(self, action: #selector(didTapSimonButton( _:)), for: .touchUpInside)
         gameView.yellowButton.addTarget(self, action: #selector(didTapSimonButton( _:)), for: .touchUpInside)
     }
+}
+//MARK: -- Game functionality
+extension ViewController {
+    @objc private func didTapSimonButton(_ sender: AnyObject){
+        guard let button = sender as? SimonButton else {return}
+        game.chooseButton(withColorType: button.buttonColorType)
+        updateUIWithModel()
+    }
+    @objc private func didTapNewGameButton(){
+        game.startGame()
+        updateUIWithModel()
+        initiateNewLevel()
+    }
+    ///calls show button sequesnce on the global queue, since showButtonsSequence uses sleep between button calls we dont want to block main queue
+    private func initiateNewLevel(){
+        DispatchQueue.global(qos: .userInteractive).asyncAfter(deadline: .now() + 1) {
+            self.showButtonsSequence(self.game.currentSequence)
+        }
+    }
+    ///shows sequence of buttons with pauses inbetween
     private func showButtonsSequence(_ buttonsSequence: [ButtonItem]){
         for button in buttonsSequence {
-            //change color
+            //changes color
             DispatchQueue.main.async {
                 self.gameView.highlightButton(button.buttonType)
             }
@@ -54,28 +79,15 @@ class ViewController: UIViewController {
         }
     }
     private func displayAlertWithScore(){
-        let alert = UIAlertController(title: "Game Over!", message: "Your current score is: \(game.score.currentScore)", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Game Over!",
+                                      message: "Your current score is: \(game.score.currentScore)",
+                                      preferredStyle: .alert)
         alert.addAction(.init(title: "OK", style: .cancel, handler: { (alertAction) in
-            print("dissmissed!")
             self.gameView.newGameUI()
         }))
         self.present(alert, animated: true)
     }
-    @objc private func didTapNewGameButton(){
-        game.startGame()
-        initiateNewLevel()
+    private func updateUIWithModel(){
+        gameView.updateUIWith(score: game.score)
     }
-    private func initiateNewLevel(){
-        DispatchQueue.global(qos: .userInteractive).async {
-            print(self.game.currentSequence)
-            self.showButtonsSequence(self.game.currentSequence)
-        }
-    }
-    @objc private func didTapSimonButton(_ sender: AnyObject){
-        guard let button = sender as? SimonButton else {return}
-        game.chooseButton(withColorType: button.buttonColorType)
-        gameView.updateScore(game.score.currentScore, game.score.currentLevel)
-    }
-
 }
-
