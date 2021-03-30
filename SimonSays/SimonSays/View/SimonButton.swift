@@ -24,6 +24,7 @@ class SimonButton: UIButton {
         self.secondaryColor = secondaryColor
         super.init(frame: .zero)
         self.backgroundColor = mainColor
+        self.layer.cornerRadius = Constants.cornerRadius
     }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

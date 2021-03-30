@@ -68,8 +68,11 @@ extension SimonSaysViewController {
     }
     ///shows sequence of buttons with pauses in between
     private func showButtonsSequence(_ buttonsSequence: [ButtonItem]){
+        DispatchQueue.main.async {
+            self.gameView.lockButtons()
+        }
         for button in buttonsSequence {
-            if !game.isGameRunning{return}
+            if !game.isGameRunning{break}
             //changes color
             DispatchQueue.main.async {
                 self.gameView.highlightButton(button.buttonType)
@@ -79,6 +82,9 @@ extension SimonSaysViewController {
                 self.gameView.highlightButton(button.buttonType)
             }
             sleep(1)
+        }
+        DispatchQueue.main.async {
+            self.gameView.unlockButtons()
         }
     }
     private func displayAlertWithScore(){

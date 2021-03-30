@@ -24,8 +24,10 @@ class GameView: UIView {
     let newGameButton: UIButton = {
         let button = UIButton()
         button.setTitle("New game", for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 21)
         button.backgroundColor = .orange
         button.addTarget(self, action: #selector(didTapNewGameButton), for: .touchUpInside)
+        button.layer.cornerRadius = Constants.cornerRadius
         return button
     }()
     let highScoreLabel: UILabel = {
@@ -80,7 +82,7 @@ class GameView: UIView {
 extension GameView {
     private func setupSubViews(){
         
-        self.backgroundColor = .white
+        self.backgroundColor = UIColor().hexStringToUIColor(hex: "#1e90ff")
     
         //Buttons
         let firstRowStack = UIStackView(arrangedSubviews: [redButton, blueButton])
@@ -127,6 +129,12 @@ extension GameView {
 }
 //MARK: -- helper functions
 extension GameView{
+    func lockButtons(){
+        stack.isUserInteractionEnabled = false
+    }
+    func unlockButtons(){
+        stack.isUserInteractionEnabled = true
+    }
     ///when new game button was tapped, hide new game button and high score label
     func inGameUI(){
         stack.isUserInteractionEnabled = true
