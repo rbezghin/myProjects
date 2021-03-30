@@ -1,9 +1,16 @@
-Requirements:
+## Simon Says
 
-The game must have 4 buttons, each of a different color of your choice.
+<p float="left">
+  <img src="etc/startGame.png" width="200"/>
+  <img src="etc/gameOver.png" width="200"/>
+</p>
 
-The game begins when the player hits taps a start button.
+### Requirements:
 
-When the game ends, it should display "Game Over!" and ask the player to try again.
+- The game must have 4 buttons, each of a different color of your choice.
 
-Display the "high scores" for a particular gaming session (they do not need to persist after closing the browser).
+- The game begins when the player hits taps a start button.
+
+- When the game ends, it should display "Game Over!" and ask the player to try again.
+
+- Display the "high scores" for a particular gaming session (they do not need to persist after closing the browser).
