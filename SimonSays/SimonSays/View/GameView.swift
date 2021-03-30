@@ -58,15 +58,23 @@ class GameView: UIView {
         stack.spacing = 10
         return stack
     }()
-    private func createButtons(_ colors: [UIColor])-> [UIButton]{
-        var buttons: [UIButton] = []
-        for color in colors {
-            let button = UIButton(type: .custom)
-            button.setBackgroundColor(color: color, forState: .normal)
-            buttons.append(button)
-        }
-        return buttons
-    }
+    let redButton: SimonButton = {
+        let button = SimonButton(.red, .orange)
+        return button
+    }()
+    let blueButton: SimonButton = {
+        let button = SimonButton(.blue, .orange)
+        return button
+    }()
+    let greenButton: UIButton = {
+        let button = SimonButton(.green, .orange)
+        return button
+    }()
+    let yellowButton: UIButton = {
+        let button = SimonButton(.yellow, .orange)
+        return button
+    }()
+
 }
 //MARK: -- UI setup
 extension GameView {
@@ -75,12 +83,12 @@ extension GameView {
         self.backgroundColor = .white
     
         //Buttons
-        let firstRowStack = UIStackView(arrangedSubviews: createButtons([.red, .blue]))
+        let firstRowStack = UIStackView(arrangedSubviews: [redButton, blueButton])
         firstRowStack.axis = .horizontal
         firstRowStack.distribution = .fillEqually
         firstRowStack.spacing = 10
    
-        let secondRowStack = UIStackView(arrangedSubviews: createButtons([.green, .yellow]))
+        let secondRowStack = UIStackView(arrangedSubviews: [greenButton, yellowButton])
         secondRowStack.axis = .horizontal
         secondRowStack.distribution = .fillEqually
         secondRowStack.spacing = 10
@@ -148,6 +156,19 @@ extension GameView{
     @objc func didTapNewGameButton(){
         inGameUI()
     }
+    func highlightButton(_ buttonType: ButtonType){
+        switch buttonType {
+        case .red:
+            redButton.isHighlighted.toggle()
+        case .blue:
+            blueButton.isHighlighted.toggle()
+        case .green:
+            greenButton.isHighlighted.toggle()
+        case .yellow:
+            yellowButton.isHighlighted.toggle()
+        }
+    }
+
 }
 
 
