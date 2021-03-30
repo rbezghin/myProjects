@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         setupGameView()
         game.gameOverHandler = { [weak self] score in
-            print("game over")
+            self?.displayAlertWithScore()
         }
         game.newLevelHandler = { [weak self] in
             self?.initiateNewLevel()
@@ -53,6 +53,14 @@ class ViewController: UIViewController {
             sleep(1)
         }
     }
+    private func displayAlertWithScore(){
+        let alert = UIAlertController(title: "Game Over!", message: "Your current score is: \(game.score.currentScore)", preferredStyle: .alert)
+        alert.addAction(.init(title: "OK", style: .cancel, handler: { (alertAction) in
+            print("dissmissed!")
+            self.gameView.newGameUI()
+        }))
+        self.present(alert, animated: true)
+    }
     @objc private func didTapNewGameButton(){
         game.startGame()
         initiateNewLevel()
@@ -65,16 +73,8 @@ class ViewController: UIViewController {
     }
     @objc private func didTapSimonButton(_ sender: AnyObject){
         guard let button = sender as? SimonButton else {return}
-        switch button.buttonColorType {
-        case .red:
-            game.chooseButton(withColorType: .red)
-        case .blue:
-            game.chooseButton(withColorType: .blue)
-        case .green:
-            game.chooseButton(withColorType: .green)
-        case .yellow:
-            game.chooseButton(withColorType: .yellow)
-        }
+        game.chooseButton(withColorType: button.buttonColorType)
+        gameView.updateScore(game.score.currentScore, game.score.currentLevel)
     }
 
 }
