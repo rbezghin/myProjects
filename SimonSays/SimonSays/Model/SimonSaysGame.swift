@@ -8,6 +8,7 @@
 import Foundation
 
 class SimonSaysGame{
+    private(set) var gameIsRunning = false
     ///data related to score/maxscore/level
     private(set) var score: Score
     ///randomly generated sequence
@@ -29,6 +30,7 @@ class SimonSaysGame{
 extension SimonSaysGame{
     ///after user taps start new game startGame func is called
     func startGame(){
+        gameIsRunning = true
         resetData()
         currentSequence.append(pickNewRandomButtonItem())
     }
@@ -55,6 +57,7 @@ extension SimonSaysGame {
         newLevelHandler?()
     }
     private func gameOver(){
+        gameIsRunning = false
         gameOverHandler?(score)
     }
     private func resetData(){

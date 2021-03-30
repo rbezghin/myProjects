@@ -9,9 +9,9 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let gameView = GameView()
+    private let gameView = GameView()
     
-    let game = SimonSaysGame()
+    private let game = SimonSaysGame()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,13 +60,14 @@ extension ViewController {
     }
     ///calls show button sequesnce on the global queue, since showButtonsSequence uses sleep between button calls we dont want to block main queue
     private func initiateNewLevel(){
-        DispatchQueue.global(qos: .userInteractive).asyncAfter(deadline: .now() + 1) {
+        DispatchQueue.global(qos: .userInteractive).asyncAfter(deadline: .now() + 1){
             self.showButtonsSequence(self.game.currentSequence)
         }
     }
     ///shows sequence of buttons with pauses inbetween
     private func showButtonsSequence(_ buttonsSequence: [ButtonItem]){
         for button in buttonsSequence {
+            if !game.gameIsRunning{return}
             //changes color
             DispatchQueue.main.async {
                 self.gameView.highlightButton(button.buttonType)
