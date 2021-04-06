@@ -21,6 +21,7 @@
 		805B1E9B25FFFAC6008ABBB8 /* FindKthLargestValueBST.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805B1E9A25FFFAC6008ABBB8 /* FindKthLargestValueBST.swift */; };
 		806261AA25ED86DA0047793E /* BSTIterative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806261A925ED86DA0047793E /* BSTIterative.swift */; };
 		806261B025EEE0D70047793E /* ValidateBST.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806261AF25EEE0D70047793E /* ValidateBST.swift */; };
+		8063CCD3261D13EC00C807C5 /* MinStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8063CCD2261D13EC00C807C5 /* MinStack.swift */; };
 		80699CB925A91FDD0037FF0F /* SmallestDifference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80699CB825A91FDD0037FF0F /* SmallestDifference.swift */; };
 		80699CBF25AE7E400037FF0F /* MoveElementToEnd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80699CBE25AE7E400037FF0F /* MoveElementToEnd.swift */; };
 		806A80722575A4A3004CA00A /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806A80712575A4A3004CA00A /* Stack.swift */; };
@@ -64,6 +65,7 @@
 		805B1E9A25FFFAC6008ABBB8 /* FindKthLargestValueBST.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindKthLargestValueBST.swift; sourceTree = "<group>"; };
 		806261A925ED86DA0047793E /* BSTIterative.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSTIterative.swift; sourceTree = "<group>"; };
 		806261AF25EEE0D70047793E /* ValidateBST.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateBST.swift; sourceTree = "<group>"; };
+		8063CCD2261D13EC00C807C5 /* MinStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinStack.swift; sourceTree = "<group>"; };
 		80699CB825A91FDD0037FF0F /* SmallestDifference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallestDifference.swift; sourceTree = "<group>"; };
 		80699CBE25AE7E400037FF0F /* MoveElementToEnd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveElementToEnd.swift; sourceTree = "<group>"; };
 		806A80712575A4A3004CA00A /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				80E6A1DF25A52B4D00E62C66 /* PalindromeCheck.swift */,
 				80E6A1E225A532A900E62C66 /* CaesarCipherEncryptor.swift */,
 				80E6A1E525A5386C00E62C66 /* RunLengthEncoding.swift */,
+				8063CCD2261D13EC00C807C5 /* MinStack.swift */,
 			);
 			path = Easy;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				804C9DFD259BD3CB00ECC874 /* FindThreeLargestNumbers.swift in Sources */,
 				806261AA25ED86DA0047793E /* BSTIterative.swift in Sources */,
 				80E6A1E925A675FE00E62C66 /* ThreeNumberSum.swift in Sources */,
+				8063CCD3261D13EC00C807C5 /* MinStack.swift in Sources */,
 				8056152125C3721B008E9E54 /* BST.swift in Sources */,
 				80E6A1DD25A5272900E62C66 /* SelectionSort.swift in Sources */,
 				8097098D258425970059F58E /* BinarySearch.swift in Sources */,
