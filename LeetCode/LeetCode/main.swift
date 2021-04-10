@@ -7,12 +7,7 @@
 //
 
 
-//Your MinStack object will be instantiated and called as such:
-
-
- //Your ParkingSystem object will be instantiated and called as such:
-let obj = ParkingSystem(1, 1, 0)
-let ret_1: Bool = obj.addCar(1)
-let ret_2: Bool = obj.addCar(2)
-let ret_3: Bool = obj.addCar(3)
-
+var matrix = [[1,1,1],[1,0,1],[1,1,1]]
+print(matrix)
+SetMatrixZeroes().setZeroes(&matrix)
+print(matrix)

@@ -37,6 +37,9 @@
 		806C31C8261F9A3B0094C265 /* MissingNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806C31C7261F9A3B0094C265 /* MissingNumber.swift */; };
 		806C31CB261FAE700094C265 /* ParkingSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806C31CA261FAE700094C265 /* ParkingSystem.swift */; };
 		806C31CF261FBBE40094C265 /* BuySellStockII.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806C31CE261FBBE40094C265 /* BuySellStockII.swift */; };
+		806C31D2261FC1C10094C265 /* TelephoneLetterCombinations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806C31D1261FC1C10094C265 /* TelephoneLetterCombinations.swift */; };
+		806C31D72620FC150094C265 /* ThreeSum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806C31D62620FC150094C265 /* ThreeSum.swift */; };
+		806C31DB262118570094C265 /* SetMatrixZeroes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806C31DA262118570094C265 /* SetMatrixZeroes.swift */; };
 		8097098925840EA80059F58E /* ProductSum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8097098825840EA80059F58E /* ProductSum.swift */; };
 		8097098D258425970059F58E /* BinarySearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8097098C258425970059F58E /* BinarySearch.swift */; };
 		80ABEB7225F6DE4300EFB405 /* BSTTraversal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ABEB7125F6DE4300EFB405 /* BSTTraversal.swift */; };
@@ -92,6 +95,9 @@
 		806C31C7261F9A3B0094C265 /* MissingNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissingNumber.swift; sourceTree = "<group>"; };
 		806C31CA261FAE700094C265 /* ParkingSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingSystem.swift; sourceTree = "<group>"; };
 		806C31CE261FBBE40094C265 /* BuySellStockII.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuySellStockII.swift; sourceTree = "<group>"; };
+		806C31D1261FC1C10094C265 /* TelephoneLetterCombinations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelephoneLetterCombinations.swift; sourceTree = "<group>"; };
+		806C31D62620FC150094C265 /* ThreeSum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeSum.swift; sourceTree = "<group>"; };
+		806C31DA262118570094C265 /* SetMatrixZeroes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetMatrixZeroes.swift; sourceTree = "<group>"; };
 		8097098825840EA80059F58E /* ProductSum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSum.swift; sourceTree = "<group>"; };
 		8097098C258425970059F58E /* BinarySearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinarySearch.swift; sourceTree = "<group>"; };
 		80ABEB7125F6DE4300EFB405 /* BSTTraversal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSTTraversal.swift; sourceTree = "<group>"; };
@@ -134,12 +140,21 @@
 			isa = PBXGroup;
 			children = (
 				8029F25424CFB22900700E61 /* main.swift */,
+				806C31D4261FC1C60094C265 /* MonthlyChallenges */,
 				8097098625840CBC0059F58E /* Hard */,
 				8097098525840CAB0059F58E /* Medium */,
 				8097098225840C240059F58E /* Easy */,
 				8097098725840CD30059F58E /* Utils */,
 			);
 			path = LeetCode;
+			sourceTree = "<group>";
+		};
+		806C31D4261FC1C60094C265 /* MonthlyChallenges */ = {
+			isa = PBXGroup;
+			children = (
+				806C31D1261FC1C10094C265 /* TelephoneLetterCombinations.swift */,
+			);
+			path = MonthlyChallenges;
 			sourceTree = "<group>";
 		};
 		8097098225840C240059F58E /* Easy */ = {
@@ -176,6 +191,8 @@
 			children = (
 				80E6A1E825A675FE00E62C66 /* ThreeNumberSum.swift */,
 				805614DA25BE4681008E9E54 /* IsMonotonic.swift */,
+				806C31D62620FC150094C265 /* ThreeSum.swift */,
+				806C31DA262118570094C265 /* SetMatrixZeroes.swift */,
 				805614DD25BF84AD008E9E54 /* SpiralTraverse.swift */,
 				805614E025C09C6F008E9E54 /* LongestPeak.swift */,
 				805614E325C0C228008E9E54 /* ArrayOfProducts.swift */,
@@ -275,7 +292,9 @@
 				806C31CF261FBBE40094C265 /* BuySellStockII.swift in Sources */,
 				80E6A1E325A532A900E62C66 /* CaesarCipherEncryptor.swift in Sources */,
 				8097098925840EA80059F58E /* ProductSum.swift in Sources */,
+				806C31D72620FC150094C265 /* ThreeSum.swift in Sources */,
 				805614E125C09C6F008E9E54 /* LongestPeak.swift in Sources */,
+				806C31DB262118570094C265 /* SetMatrixZeroes.swift in Sources */,
 				806C31C5261F86970094C265 /* PascalTriangle.swift in Sources */,
 				80ABEB7225F6DE4300EFB405 /* BSTTraversal.swift in Sources */,
 				804C9DFD259BD3CB00ECC874 /* FindThreeLargestNumbers.swift in Sources */,
@@ -284,6 +303,7 @@
 				80E6A1E925A675FE00E62C66 /* ThreeNumberSum.swift in Sources */,
 				806C31CB261FAE700094C265 /* ParkingSystem.swift in Sources */,
 				8063CCD3261D13EC00C807C5 /* MinStack.swift in Sources */,
+				806C31D2261FC1C10094C265 /* TelephoneLetterCombinations.swift in Sources */,
 				8056152125C3721B008E9E54 /* BST.swift in Sources */,
 				80E6A1DD25A5272900E62C66 /* SelectionSort.swift in Sources */,
 				8097098D258425970059F58E /* BinarySearch.swift in Sources */,
