@@ -17,6 +17,15 @@ public class ListNode {
       public init(_ val: Int) { self.val = val; self.next = nil; }
       public init(_ val: Int, _ next: ListNode?) { self.val = val; self.next = next; }
  }
+extension ListNode: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(val)
+        hasher.combine(self)
+    }
+    public static func == (lhs: ListNode, rhs: ListNode) -> Bool {
+        return lhs === rhs
+    }
+}
 /*
  Input: l1 = [2,4,3], l2 = [5,6,4]
  Output: [7,0,8]
