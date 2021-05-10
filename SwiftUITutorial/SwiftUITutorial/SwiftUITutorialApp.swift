@@ -9,10 +9,13 @@ import SwiftUI
 
 @main
 struct SwiftUITutorialApp: App {
+    
+    @StateObject private var modelData = ModelData()
+    
     var body: some Scene {
         WindowGroup {
-            //ContentView()
-            LandmarkRow(landmark: landmarks[0])
+            ContentView()
+                .environmentObject(modelData)
         }
     }
 }
