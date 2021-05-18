@@ -5,7 +5,7 @@
 - ~~Best Time to Buy and Sell Stock - https://leetcode.com/problems/best-time-to-buy-and-sell-stock/~~
 - ~~Contains Duplicate - https://leetcode.com/problems/contains-duplicate/~~
 - ~~Product of Array Except Self - https://leetcode.com/problems/product-of-array-except-self/~~
-- Maximum Subarray - https://leetcode.com/problems/maximum-subarray/
+- ~~Maximum Subarray - https://leetcode.com/problems/maximum-subarray/~~
 - Maximum Product Subarray - https://leetcode.com/problems/maximum-product-subarray/
 - Find Minimum in Rotated Sorted Array - https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
 - Search in Rotated Sorted Array - https://leetcode.com/problems/search-in-rotated-sorted-array/
@@ -145,6 +145,8 @@ func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
 
 ### Best Time to Buy and Sell Stock
 ```
+Trick is to keep track of Min price and Max Profit
+
 Runtime: O(n) Space: O(1)
 class MaxProfit {
     func maxProfit(_ prices: [Int]) -> Int {
@@ -177,6 +179,8 @@ class MaxProfit {
 ### Product Except Self
 ```
 /*
+ Trick is to create left to right products and right to left padded with 1 on left or right to skip self
+
  Runtime: O(n)
  Space: O(1) if we dont count result array.
  this is a more efficient emplementation because I started with 3 arrays and now down to 1
@@ -192,5 +196,28 @@ func productExceptSelf(_ nums: [Int]) -> [Int] {
         currentProduct *= nums[index]
     }
     return result
+}
+```
+### Max Sub Array Sum
+```
+/*
+ Trick - Kadanes Algorithm
+ Runtime: O(n)
+ Space: O(1)
+ */
+func maxSubArray(_ nums: [Int]) -> Int {
+    if nums.isEmpty {return 0}
+    if nums.isEmpty {return 0}
+    var currentSum = nums[0]
+    var maxSum = currentSum
+    for index in 1..<nums.count {
+        if currentSum + nums[index] < nums[index] {
+            currentSum = nums[index]
+        } else {
+            currentSum += nums[index]
+        }
+        maxSum = max(currentSum, maxSum)
+    }
+    return maxSum
 }
 ```
