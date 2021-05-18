@@ -1,8 +1,8 @@
 # Leetcode prep
 
 ## Array
-- ~~Two Sum - https://leetcode.com/problems/two-sum/
-- ~~Best Time to Buy and Sell Stock - https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+- ~~Two Sum - https://leetcode.com/problems/two-sum/~~
+- ~~Best Time to Buy and Sell Stock - https://leetcode.com/problems/best-time-to-buy-and-sell-stock/~~
 - Contains Duplicate - https://leetcode.com/problems/contains-duplicate/
 - Product of Array Except Self - https://leetcode.com/problems/product-of-array-except-self/
 - Maximum Subarray - https://leetcode.com/problems/maximum-subarray/
@@ -126,6 +126,22 @@
 ## Solutions
 
 ## Array
+
+### Two Sum
+```
+Runtime: O(n) Space: O(n)
+func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
+    var map: [Int: Int] = [:]
+    for (index, num) in nums.enumerated() {
+        let numToCheck = target - num
+        if let secondNumIndex = map[numToCheck] {
+            return [index, secondNumIndex]
+        }
+        map[num] = index
+    }
+    return []
+}
+```
 
 ### Best Time to Buy and Sell Stock
 ```
