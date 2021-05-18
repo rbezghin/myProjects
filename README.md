@@ -3,7 +3,7 @@
 ## Array
 - ~~Two Sum - https://leetcode.com/problems/two-sum/~~
 - ~~Best Time to Buy and Sell Stock - https://leetcode.com/problems/best-time-to-buy-and-sell-stock/~~
-- Contains Duplicate - https://leetcode.com/problems/contains-duplicate/
+- ~~Contains Duplicate - https://leetcode.com/problems/contains-duplicate/~~
 - Product of Array Except Self - https://leetcode.com/problems/product-of-array-except-self/
 - Maximum Subarray - https://leetcode.com/problems/maximum-subarray/
 - Maximum Product Subarray - https://leetcode.com/problems/maximum-product-subarray/
@@ -160,4 +160,17 @@ class MaxProfit {
         return maxProfit
     }
 }
+```
+### Contains Duplicate
+```
+    func containsDuplicate(_ nums: [Int]) -> Bool {
+        var map = [Int: Bool]()
+        for num in nums {
+            if let _ = map[num] {
+                return true
+            }
+            map[num] = true
+        }
+        return false
+    }
 ```
