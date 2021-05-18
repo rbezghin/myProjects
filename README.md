@@ -4,7 +4,7 @@
 - ~~Two Sum - https://leetcode.com/problems/two-sum/~~
 - ~~Best Time to Buy and Sell Stock - https://leetcode.com/problems/best-time-to-buy-and-sell-stock/~~
 - ~~Contains Duplicate - https://leetcode.com/problems/contains-duplicate/~~
-- Product of Array Except Self - https://leetcode.com/problems/product-of-array-except-self/
+- ~~Product of Array Except Self - https://leetcode.com/problems/product-of-array-except-self/~~
 - Maximum Subarray - https://leetcode.com/problems/maximum-subarray/
 - Maximum Product Subarray - https://leetcode.com/problems/maximum-product-subarray/
 - Find Minimum in Rotated Sorted Array - https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
@@ -173,4 +173,24 @@ class MaxProfit {
         }
         return false
     }
+```
+### Product Except Self
+```
+/*
+ Runtime: O(n)
+ Space: O(1) if we dont count result array.
+ this is a more efficient emplementation because I started with 3 arrays and now down to 1
+ */
+func productExceptSelf(_ nums: [Int]) -> [Int] {
+    var result = [1]
+    for index in 1 ..< nums.count {
+        result.append(nums[index-1] * result[index-1])
+    }
+    var currentProduct = 1
+    for index in stride(from: nums.count-1, to: -1, by: -1) {
+        result[index] = result[index] * currentProduct
+        currentProduct *= nums[index]
+    }
+    return result
+}
 ```
