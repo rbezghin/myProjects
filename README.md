@@ -6,7 +6,7 @@
 - ~~Contains Duplicate - https://leetcode.com/problems/contains-duplicate/~~
 - ~~Product of Array Except Self - https://leetcode.com/problems/product-of-array-except-self/~~
 - ~~Maximum Subarray - https://leetcode.com/problems/maximum-subarray/~~
-- Maximum Product Subarray - https://leetcode.com/problems/maximum-product-subarray/
+- ~~Maximum Product Subarray - https://leetcode.com/problems/maximum-product-subarray/~~
 - Find Minimum in Rotated Sorted Array - https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
 - Search in Rotated Sorted Array - https://leetcode.com/problems/search-in-rotated-sorted-array/
 - 3Sum - https://leetcode.com/problems/3sum/
@@ -219,5 +219,50 @@ func maxSubArray(_ nums: [Int]) -> Int {
         maxSum = max(currentSum, maxSum)
     }
     return maxSum
+}
+```
+### Max Product Subarray
+```
+/*
+ Trick - no trick, this one is hard -_-
+ Runtime: O(n)
+ Space: O(1)
+ */
+func maxProduct(_ nums: [Int]) -> Int {
+    if nums.isEmpty {return 0}
+    var result = nums.max()!
+    var currentMax = 1
+    var currentMin = 1
+    for num in nums {
+        if num == 0 {
+            currentMax = 1; currentMin = 1
+            continue
+        }
+        let temp = currentMax * num
+        currentMax = max(currentMax*num, currentMin*num, num)
+        currentMin = min(temp, currentMin*num, num)
+        result = max(result, currentMax)
+    }
+    return result
+}
+
+ALTERNATIVE solution (not mine) Two pass left to right and right to left while keeping track of the max value and current prouct
+
+public int maxProduct(int[] nums) {
+int max = Integer.MIN_VALUE, product = 1;
+int len = nums.length;
+
+ for(int i = 0; i < len; i++) {
+     max = Math.max(product *= nums[i], max);
+     if (nums[i] == 0) product = 1;
+ }
+
+ product = 1;
+ for(int i = len - 1; i >= 0; i--) {
+     max = Math.max(product *= nums[i], max);
+     if (nums[i] == 0) product = 1;
+ }
+
+ return max;
 }
 ```
