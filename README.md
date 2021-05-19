@@ -7,10 +7,10 @@
 - ~~Product of Array Except Self - https://leetcode.com/problems/product-of-array-except-self/~~
 - ~~Maximum Subarray - https://leetcode.com/problems/maximum-subarray/~~
 - ~~Maximum Product Subarray - https://leetcode.com/problems/maximum-product-subarray/~~
-- Find Minimum in Rotated Sorted Array - https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
-- Search in Rotated Sorted Array - https://leetcode.com/problems/search-in-rotated-sorted-array/
-- 3Sum - https://leetcode.com/problems/3sum/
-- Container With Most Water - https://leetcode.com/problems/container-with-most-water/
+- ~~Find Minimum in Rotated Sorted Array - https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/~~
+- ~~Search in Rotated Sorted Array - https://leetcode.com/problems/search-in-rotated-sorted-array/~~
+- ~~3Sum - https://leetcode.com/problems/3sum/~~
+- ~~Container With Most Water - https://leetcode.com/problems/container-with-most-water/~~
 
 ---
 
@@ -264,5 +264,68 @@ int len = nums.length;
  }
 
  return max;
+}
+```
+### 3Sum
+```
+/*
+ Trick - Sort array, for every number in array find two sum
+    use two pointers on left and right and move left if sum is smaller or move right if summ is too big
+    to avoid duplicates while loop through left and right
+    also check for same sumbers in the original array bc no need to look for pairs for the same number
+ 
+    Runtime: O(n^2)
+ */
+func threeSum(_ nums: [Int]) -> [[Int]] {
+    var result = [[Int]]()
+    let nums = nums.sorted()
+    for index in 0..<nums.count-2 {
+        if index == 0 || ( index > 0 && nums[index] != nums[index-1]){
+            let target = 0 - nums[index]
+            var left = index+1
+            var right = nums.count-1
+            while left < right {
+                if nums[left] + nums[right] == target {
+                    //we found the value
+                    result.append([nums[index],nums[left],nums[right]])
+                    //skip duplicates
+                    while (left < right && nums[left] == nums[left+1]){left += 1}
+                    while (left < right && nums[right] == nums[right-1]){right -= 1}
+                    left += 1
+                    right -= 1
+                } else if nums[left] + nums[right] > target {
+                    right -= 1
+                } else {
+                    left += 1
+                }
+            }
+        }
+    }
+    return result
+}
+```
+```
+missing a few algos...
+```
+
+### Container With Most Water
+```
+/*
+ Trick: Two pointer...
+ */
+func maxArea(_ height: [Int]) -> Int {
+    var maxArea = 0
+    var left = 0
+    var right = height.count-1
+    while left < right {
+        let currentArea = min(height[left], height[right]) * (right-left)
+        maxArea = max(currentArea, maxArea)
+        if height[left] < height[right]{
+            left += 1
+        } else {
+            right -= 1
+        }
+    }
+    return maxArea
 }
 ```
