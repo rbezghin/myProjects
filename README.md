@@ -85,9 +85,9 @@
 
 ## String
 
-- Longest Substring Without Repeating Characters - https://leetcode.com/problems/longest-substring-without-repeating-characters/
-- Longest Repeating Character Replacement - https://leetcode.com/problems/longest-repeating-character-replacement/
-- Minimum Window Substring - https://leetcode.com/problems/minimum-window-substring/
+- ~~Longest Substring Without Repeating Characters - https://leetcode.com/problems/longest-substring-without-repeating-characters/~~
+- ~~Longest Repeating Character Replacement - https://leetcode.com/problems/longest-repeating-character-replacement/~~
+- Minimum Window Substring (Hard *_* no thank you) - https://leetcode.com/problems/minimum-window-substring/
 - Valid Anagram - https://leetcode.com/problems/valid-anagram/
 - Group Anagrams - https://leetcode.com/problems/group-anagrams/
 - Valid Parentheses - https://leetcode.com/problems/valid-parentheses/
@@ -328,4 +328,80 @@ func maxArea(_ height: [Int]) -> Int {
     }
     return maxArea
 }
+```
+## String
+### Longest Substring Without Repeating Characters
+```
+/*
+ Trick: Sliding window, two pointers to keep track of the current substring
+        Set to kepe track of the characters in the substring
+ Runtime: O(n) we go through array once
+ Space: O(n) storing up to n characters in the Set
+ */
+func lengthOfLongestSubstring(_ s: String) -> Int {
+    if s.count == 0 {return 0}
+    if s.count < 2 {return 1}
+    let string = Array(s)
+    var set = Set<Character>()
+    var beginning = 0
+    var end = 0
+    var maxLength = 0
+    while end < string.count {
+        //character is not in the set
+        if !set.contains(string[end]) {
+            set.insert(string[end])
+            end += 1
+            maxLength = max(set.count, maxLength)
+        //we have a duplicate, move the window
+        } else {
+            set.remove(string[beginning])
+            beginning += 1
+        }
+    }
+    return maxLength
+}
+```
+### Longest Repeating Character Replacement (pretty hard one)
+```
+/*
+ Trick: Sliding window, add characters, characters with larger count determine what characters to pop out
+        Map to keep track of how many charactes in the current window
+ 
+ Runtime: O(n) we go through array once
+ 
+ Space: O(n) storing up to n characters in the Set
+ */
+func characterReplacement(_ s: String, _ k: Int) -> Int {
+    let string = Array(s)
+    var charactersCount = [Character: Int]()
+    
+    var maxWindowLength = 0
+    var currentCharacterCount = 0 //current character is the character with longest count
+    
+    var start = 0
+    var end = 0
+    
+    while end < string.count {
+        //update how many characters
+        if let  _  = charactersCount[string[end]] {
+            charactersCount[string[end]]! += 1
+        } else {
+            charactersCount[string[end]] = 1
+        }
+        //update current max count character
+        currentCharacterCount = max(currentCharacterCount, charactersCount[string[end]]!)
+        //while we dont have available replacements 'k'
+        while end - start + 1 - currentCharacterCount > k {
+            charactersCount[string[start]]! -= 1
+            start += 1
+        }
+        maxWindowLength =  max(maxWindowLength, end - start + 1)
+        end += 1
+    }
+    return maxWindowLength
+}
+```
+###
+```
+
 ```
