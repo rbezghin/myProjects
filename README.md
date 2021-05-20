@@ -401,7 +401,115 @@ func characterReplacement(_ s: String, _ k: Int) -> Int {
     return maxWindowLength
 }
 ```
-###
+### Valid Anagram
 ```
+/*
+ Trick: use map, for unicode characrters - there can be a lot of them but map fixes that issue
+ 
+ Runtime: O(n)
+ 
+ Space: O(n)
+ */
 
+func isAnagram(_ s: String, _ t: String) -> Bool {
+    if s.count != t.count {return false}
+    var sMap = [Character: Int]()
+    for char in s {
+        if let _ = sMap[char] {
+            sMap[char]! += 1
+        } else {
+            sMap[char] = 1
+        }
+    }
+    for char in t {
+        if let _ = sMap[char] {
+            sMap[char]! -= 1
+            if sMap[char]! == 0 {
+                sMap[char] = nil
+            }
+        } else {
+            return false
+        }
+    }
+    return sMap.isEmpty
+}
+```
+### Group Anagrams
+```
+/*
+ Trick: sort anagrams and store them in the map with sorted as a key and unsorted values as key array
+  n = number of strings m max length of string
+ Runtime: O(nmlogm)
+ 
+ Space: O(n)
+ */
+
+func groupAnagrams(_ strs: [String]) -> [[String]] {
+    var map = [String:[String]]()
+    for string in strs {
+        let sorted = String(string.sorted())
+        if let _ = map[sorted] {
+            map[sorted]?.append(string)
+        } else {
+            map[sorted] = [string]
+        }
+    }
+    return map.map({$0.value})
+}
+```
+### Valid Parentheses
+```
+/*
+ Trick: store a mapping of opening to closing parens
+ 
+ Runtime: O(n)
+ Space: O(1)
+ */
+
+func isValid(_ s: String) -> Bool {
+    var stack = [String]()
+    let mapping = ["(":")", "[":"]", "{":"}"]
+    for paren in s {
+        //if opening paren
+        if let _ = mapping[String(paren)] {
+            stack.append(String(paren))
+        } else { //opening paren
+            if let potentialMatch = stack.popLast() {
+                if mapping[potentialMatch] != String(paren) {
+                    return false
+                }
+            } else {
+                return false
+            }
+        }
+    }
+    return stack.isEmpty
+}
+```
+### Valid Palindrome
+```
+/*
+ Trick: ehh 
+ 
+ Runtime: O(n)
+ Space: O(1)
+ */
+func isPalindrome(_ s: String) -> Bool {
+    let s = Array(s)
+    var left = 0
+    var right = s.count-1
+    while left < right {
+        if !s[left].isLetter && !s[left].isNumber{
+            left += 1
+        } else if !s[right].isLetter && !s[right].isNumber{
+            right -= 1
+        } else if s[right].lowercased() != s[left].lowercased() {
+            return false
+        } else {
+            left += 1
+            right -= 1
+        }
+    }
+    return true
+}
 ```
