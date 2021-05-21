@@ -92,8 +92,8 @@
 - ~~Group Anagrams - https://leetcode.com/problems/group-anagrams/~~
 - ~~Valid Parentheses - https://leetcode.com/problems/valid-parentheses/~~
 - ~~Valid Palindrome - https://leetcode.com/problems/valid-palindrome/~~
-- Longest Palindromic Substring - https://leetcode.com/problems/longest-palindromic-substring/
-- Palindromic Substrings - https://leetcode.com/problems/palindromic-substrings/
+- ~~Longest Palindromic Substring - https://leetcode.com/problems/longest-palindromic-substring/~~
+- ~~Palindromic Substrings - https://leetcode.com/problems/palindromic-substrings/~~
 - Encode and Decode Strings (Leetcode Premium) - https://leetcode.com/problems/encode-and-decode-strings/
 
 ---
@@ -334,7 +334,7 @@ func maxArea(_ height: [Int]) -> Int {
 ```
 /*
  Trick: Sliding window, two pointers to keep track of the current substring
-        Set to kepe track of the characters in the substring
+        Set to keep track of the characters in the substring
  Runtime: O(n) we go through array once
  Space: O(n) storing up to n characters in the Set
  */
@@ -511,5 +511,78 @@ func isPalindrome(_ s: String) -> Bool {
         }
     }
     return true
+}
+```
+### Longest Palindromic Substring
+```
+/*
+ Trick: store a mapping of opening to closing parens
+ 
+ Runtime: O(n^2) we iterate over the string (On) and expand for every character On
+ Space: O(1) not much extra space
+ */
+
+func longestPalindrome(_ s: String) -> String {
+    let s = Array(s)
+    //to keep track of the indices
+    var front = 0
+    var end = 0
+    for index in 0 ..< s.count {
+        let length1 = expand(s, index, index)
+        let length2 = expand(s, index, index+1)
+        let length = max(length2, length1)
+        if length > end - front {
+            //new max length
+            front = index - (length-1)/2
+            end = index + (length)/2
+        }
+    }
+    return String(s[front...end])
+}
+
+func expand(_ s: [String.Element], _ left: Int, _ right: Int) -> Int {
+    if left < 0 || right >= s.count {return 0}
+    var left = left
+    var right = right
+    while left >= 0 && right < s.count && s[left] == s[right] {
+        left -= 1
+        right += 1
+    }
+    return right - left - 1 // -1 because left and right were incremented + 2 when they failed the requirements
+}
+```
+### Palindromic Substrings (two versions)
+```
+coming soon
+```
+```
+/*
+ Trick: store a mapping of opening to closing parens
+ 
+ Runtime: O(n^2) we iterate over the string (On) and expand for every character On
+ Space: O(1) not much extra space
+ */
+func countSubstrings(_ s: String) -> Int {
+    var counter = 0
+    let s = Array(s)
+    for index in 0 ..< s.count {
+        let count1 = expand(s, index, index)
+        let count2 = expand(s, index, index+1)
+        counter = counter + count1 + count2
+    }
+    
+    return counter
+}
+func expand(_ s: [String.Element], _ left: Int, _ right: Int) -> Int {
+    if left < 0 || right >= s.count {return 0}
+    var count = 0
+    var left = left
+    var right = right
+    while left >= 0 && right < s.count && s[left] == s[right] {
+        count += 1
+        left -= 1
+        right += 1
+    }
+    return count // -1 because left and right were incremented + 2 when they failed the requirements
 }
 ```
